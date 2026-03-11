@@ -1,5 +1,19 @@
-import { defineRecipe } from "@chakra-ui/react";
+import { avatarAnatomy } from "@chakra-ui/react/anatomy";
+import { defineSlotRecipe } from "@chakra-ui/react";
 
-export const avatarRecipe = defineRecipe({
-  base: { bgColor: "secondary", fontFamily: "heading" },
+export const avatarSlotRecipe = defineSlotRecipe({
+  slots: avatarAnatomy.keys(),
+  base: {
+    fallback: { fontFamily: "heading" },
+  },
+  variants: {
+    variant: {
+      solid: {
+        root: {
+          bg: "secondary",
+          color: "primary",
+        },
+      },
+    },
+  },
 });

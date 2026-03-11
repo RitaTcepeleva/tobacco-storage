@@ -1,5 +1,5 @@
 import { createSystem, defaultConfig, defineConfig } from "@chakra-ui/react";
-import { buttonRecipe } from "./recipes";
+import { buttonRecipe, avatarSlotRecipe, inputRecipe } from "./recipes";
 
 const config = defineConfig({
   globalCss: {
@@ -21,6 +21,10 @@ const config = defineConfig({
   theme: {
     recipes: {
       button: buttonRecipe,
+      input: inputRecipe,
+    },
+    slotRecipes: {
+      avatar: avatarSlotRecipe,
     },
     breakpoints: {
       xs: "340px",

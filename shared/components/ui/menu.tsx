@@ -22,10 +22,10 @@ export const Menu = ({ title, filter, items }: MenuProps) => {
   return (
     <ChakraMenu.Root>
       <ChakraMenu.Trigger asChild>
-        <Button>
+        <Button gap={5}>
           <CiFilter />
           {selectedItem ? selectedItem.content : title}
-          <IoIosArrowDown />
+          <IoIosArrowDown opacity={0.5} />
         </Button>
       </ChakraMenu.Trigger>
       <Portal>

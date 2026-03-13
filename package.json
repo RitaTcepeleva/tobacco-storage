@@ -7,7 +7,8 @@
     "build": "next build --webpack",
     "start": "next start",
     "lint": "eslint",
-    "lint:fix": "eslint --fix"
+    "lint:fix": "eslint --fix",
+    "codegen": "npx @chakra-ui/cli typegen shared/styles/theme.ts"
   },
   "dependencies": {
     "@chakra-ui/react": "^3.32.0",

@@ -8,11 +8,14 @@ import {
   Button,
   Input,
   InputGroup,
+  Badge,
 } from "@chakra-ui/react";
 // import { Button } from "@/shared/components/ui";
 import { FaRegTrashAlt } from "react-icons/fa";
 import { CiSearch } from "react-icons/ci";
+import { FiBox } from "react-icons/fi";
 import { Menu } from "@/shared/components/ui/menu";
+import { StatisticCard } from "@/shared/components/cards";
 
 export default async function Page() {
   const items = [
@@ -65,6 +68,22 @@ export default async function Page() {
           <Box width={100} height={100} bg={"tobacco.900"} />
           <Box width={100} height={100} bg={"black/20"} />
         </HStack>
+
+        <HStack>
+          <Badge size="md">250G</Badge>
+          <Badge variant="outline" size="md">
+            125G
+          </Badge>
+          <Badge variant="solid">Fruit</Badge>
+        </HStack>
+
+        <StatisticCard
+          title="1,450"
+          description="Total Stock"
+          caption={["grams", "+125g this month"]}
+        >
+          <FiBox size={24} />
+        </StatisticCard>
       </VStack>
     </Box>
   );

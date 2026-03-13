@@ -12,8 +12,15 @@ import {
 // import { Button } from "@/shared/components/ui";
 import { FaRegTrashAlt } from "react-icons/fa";
 import { CiSearch } from "react-icons/ci";
+import { Menu } from "@/shared/components/ui/menu";
 
 export default async function Page() {
+  const items = [
+    { value: "all", content: "All Strength" },
+    { value: "light", content: "Light" },
+    { value: "medium", content: "Medium" },
+    { value: "strong", content: "Strong" },
+  ];
   return (
     <Box textAlign="center" fontSize="xl" pt="30vh">
       <VStack gap="8">
@@ -46,6 +53,18 @@ export default async function Page() {
             placeholder="Search flavours, brands..."
           />
         </InputGroup>
+
+        <Menu title="Strength" items={items} filter="strength" />
+
+        <HStack>
+          <Box width={100} height={100} bg={"tobacco.400"} />
+          <Box width={100} height={100} bg={"tobacco.500"} />
+          <Box width={100} height={100} bg={"tobacco.600"} />
+          <Box width={100} height={100} bg={"tobacco.700"} />
+          <Box width={100} height={100} bg={"tobacco.800"} />
+          <Box width={100} height={100} bg={"tobacco.900"} />
+          <Box width={100} height={100} bg={"black/20"} />
+        </HStack>
       </VStack>
     </Box>
   );

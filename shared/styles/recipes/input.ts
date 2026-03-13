@@ -2,12 +2,8 @@ import { defineRecipe } from "@chakra-ui/react";
 
 export const inputRecipe = defineRecipe({
   base: {
-    // bg: 'card/30'
-    // marginInline: 10,
-    // paddingInline: 10,
     borderRadius: "16px",
     padding: "12px 4px",
-    // lineHeight: "4em",
   },
   variants: {
     size: {
@@ -24,6 +20,9 @@ export const inputRecipe = defineRecipe({
         focusVisibleRing: "inside",
         _focusVisible: {
           border: "none",
+        },
+        _placeholder: {
+          color: "primary",
         },
       },
     },

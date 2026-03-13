@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 // import "./globals.css";
 import { Providers } from "@/providers";
 import { dmSansFont, funnelDisplayFont } from "@/shared/styles/fonts";
+import { FiltersProvider } from "@/shared/context";
 
 export const metadata: Metadata = {
   title: "Tobacco Storage",
@@ -20,7 +21,9 @@ export default function RootLayout({
       suppressHydrationWarning
     >
       <body>
-        <Providers>{children}</Providers>
+        <Providers>
+          <FiltersProvider>{children}</FiltersProvider>
+        </Providers>
       </body>
     </html>
   );

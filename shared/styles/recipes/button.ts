@@ -43,7 +43,14 @@ export const buttonRecipe = defineRecipe({
     },
     size: {
       md: {
-        borderRadius: 8,
+        borderRadius: "md",
+        paddingBlock: 4,
+        paddingInline: 8,
+        fontSize: "14px",
+        fontWeight: "medium",
+      },
+      lg: {
+        borderRadius: "sm",
         paddingBlock: 4,
         paddingInline: 8,
         fontSize: "14px",

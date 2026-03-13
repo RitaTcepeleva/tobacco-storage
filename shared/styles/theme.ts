@@ -1,5 +1,5 @@
 import { createSystem, defaultConfig, defineConfig } from "@chakra-ui/react";
-import { buttonRecipe, avatarSlotRecipe, inputRecipe } from "./recipes";
+import { recipes, slotRecipes } from "./recipes";
 
 const config = defineConfig({
   globalCss: {
@@ -19,13 +19,8 @@ const config = defineConfig({
     },
   },
   theme: {
-    recipes: {
-      button: buttonRecipe,
-      input: inputRecipe,
-    },
-    slotRecipes: {
-      avatar: avatarSlotRecipe,
-    },
+    recipes,
+    slotRecipes,
     breakpoints: {
       xs: "340px",
       sm: "440px",
@@ -96,6 +91,11 @@ const config = defineConfig({
             0 4px 6px -4px color-mix(in oklab, {colors.primary} 40%, transparent)
           `,
         },
+      },
+      radii: {
+        xs: { value: "6px" },
+        sm: { value: "10px" },
+        md: { value: "16px" },
       },
     },
     semanticTokens: {

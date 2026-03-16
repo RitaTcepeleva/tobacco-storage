@@ -12,7 +12,10 @@ export const cardSlotRecipe = defineSlotRecipe({
           borderColor: "border",
           borderStyle: "solid",
           borderWidth: "1px",
-          _hover: { bg: "card", backdropBlur: "lg" },
+          _hover: {
+            bg: "card",
+            backdropBlur: "lg",
+          },
         },
         title: {
           fontFamily: "heading",
@@ -24,9 +27,48 @@ export const cardSlotRecipe = defineSlotRecipe({
           justifyContent: "space-between",
         },
       },
+      recentlyAcquired: {
+        root: {
+          bg: "card/50",
+          color: "foreground",
+          borderColor: "border/50",
+          borderStyle: "solid",
+          borderWidth: "1px",
+          overflow: "hidden",
+          _hover: {
+            boxShadow: "{shadows.cardHover}",
+            "& img": {
+              transform: "scale(1.05)",
+            },
+          },
+        },
+        body: {
+          position: "relative",
+          bg: "black/20",
+          alignItems: "center",
+          "& img": {
+            transition: "transform 700ms",
+          },
+        },
+        description: {
+          textTransform: "uppercase",
+        },
+        footer: {
+          zIndex: 1,
+          mt: "-0.5em",
+          flexDir: "column",
+          alignItems: "start",
+        },
+      },
     },
 
     size: {
+      md: {
+        body: { padding: 12 },
+        title: {
+          fontSize: "24px",
+        },
+      },
       lg: {
         root: {
           padding: 12,

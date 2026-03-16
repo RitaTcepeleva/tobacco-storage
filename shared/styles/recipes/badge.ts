@@ -5,7 +5,7 @@ export const badgeRecipe = defineRecipe({
     variant: {
       subtle: {
         fontWeight: "semibold",
-        bg: "background/80",
+        bg: "background",
         borderColor: "border/50",
         borderStyle: "solid",
         borderWidth: "1px",
@@ -37,6 +37,7 @@ export const badgeRecipe = defineRecipe({
         paddingBlock: 2,
         paddingInline: 6,
         fontSize: "12px",
+        lineHeight: "100%",
       },
     },
   },

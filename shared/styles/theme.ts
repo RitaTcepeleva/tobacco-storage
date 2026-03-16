@@ -91,6 +91,11 @@ const config = defineConfig({
             0 4px 6px -4px color-mix(in oklab, {colors.primary} 40%, transparent)
           `,
         },
+        cardHover: {
+          value: `
+          0 20px 25px -5px color-mix(in oklab, color-mix(in oklab, {colors.primary} 5%, transparent) 100%, transparent),
+          0 8px 10px -6px color-mix(in oklab, color-mix(in oklab, {colors.primary} 5%, transparent) 100%, transparent)`,
+        },
       },
       radii: {
         xs: { value: "6px" },

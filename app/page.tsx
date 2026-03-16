@@ -15,7 +15,7 @@ import { FaRegTrashAlt } from "react-icons/fa";
 import { CiSearch } from "react-icons/ci";
 import { FiBox } from "react-icons/fi";
 import { Menu } from "@/shared/components/ui/menu";
-import { StatisticCard } from "@/shared/components/cards";
+import { StatisticCard, RecentlyAcquiredCard } from "@/shared/components/cards";
 
 export default async function Page() {
   const items = [
@@ -77,13 +77,26 @@ export default async function Page() {
           <Badge variant="solid">Fruit</Badge>
         </HStack>
 
-        <StatisticCard
-          title="1,450"
-          description="Total Stock"
-          caption={["grams", "+125g this month"]}
-        >
-          <FiBox size={24} />
-        </StatisticCard>
+        <HStack>
+          <StatisticCard
+            title="1,450"
+            description="Total Stock"
+            caption={["grams", "+125g this month"]}
+          >
+            <FiBox size={24} />
+          </StatisticCard>
+
+          <RecentlyAcquiredCard
+            title="Vanilla"
+            descrption="Bonche"
+            image={{
+              src: "/image.png",
+              alt: "image",
+            }}
+            size={125}
+            caption={["Dessert", "Strong"]}
+          />
+        </HStack>
       </VStack>
     </Box>
   );

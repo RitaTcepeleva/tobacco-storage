@@ -6,9 +6,7 @@ export const badgeRecipe = defineRecipe({
       subtle: {
         fontWeight: "semibold",
         bg: "background",
-        borderColor: "border/50",
-        borderStyle: "solid",
-        borderWidth: "1px",
+        border: "subtle",
         color: "primary",
       },
       outline: {

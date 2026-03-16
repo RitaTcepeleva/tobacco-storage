@@ -10,11 +10,11 @@ import {
   InputGroup,
   Badge,
 } from "@chakra-ui/react";
-// import { Button } from "@/shared/components/ui";
 import { FaRegTrashAlt } from "react-icons/fa";
 import { CiSearch } from "react-icons/ci";
 import { FiBox } from "react-icons/fi";
 import { Menu } from "@/shared/components/ui/menu";
+import { Sidebar } from "@/shared/components/sidebar";
 import {
   StatisticCard,
   RecentlyAcquiredCard,
@@ -29,8 +29,15 @@ export default async function Page() {
     { value: "strong", content: "Strong" },
   ];
   return (
-    <Box textAlign="center" fontSize="xl" pt="30vh">
-      <VStack gap="8">
+    <HStack h="100vh" align={"stretch"}>
+      <Sidebar />
+      <VStack
+        gap="8"
+        textAlign="center"
+        padding={24}
+        flex={1}
+        overflowY={"auto"}
+      >
         <Heading size="2xl" letterSpacing="tight">
           Welcome to Chakra UI v3 + Next.js (App)
         </Heading>
@@ -112,6 +119,6 @@ export default async function Page() {
           />
         </HStack>
       </VStack>
-    </Box>
+    </HStack>
   );
 }

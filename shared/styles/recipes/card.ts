@@ -9,9 +9,8 @@ export const cardSlotRecipe = defineSlotRecipe({
         root: {
           bg: "card/50",
           color: "foreground",
+          border: "subtle",
           borderColor: "border",
-          borderStyle: "solid",
-          borderWidth: "1px",
           _hover: {
             bg: "card",
             backdropBlur: "lg",
@@ -31,9 +30,7 @@ export const cardSlotRecipe = defineSlotRecipe({
         root: {
           bg: "card/50",
           color: "foreground",
-          borderColor: "border/50",
-          borderStyle: "solid",
-          borderWidth: "1px",
+          border: "subtle",
           overflow: "hidden",
           _hover: {
             boxShadow: "{shadows.cardHover}",
@@ -65,12 +62,11 @@ export const cardSlotRecipe = defineSlotRecipe({
         root: {
           bg: "card/50",
           color: "foreground",
-          borderColor: "border/50",
-          borderStyle: "solid",
-          borderWidth: "1px",
+          border: "subtle",
           overflow: "hidden",
           "& button": { display: "none" },
           _hover: {
+            bg: "card/60",
             "& img": {
               transform: "scale(1.05)",
             },

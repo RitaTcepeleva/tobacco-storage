@@ -102,6 +102,9 @@ const config = defineConfig({
         sm: { value: "10px" },
         md: { value: "16px" },
       },
+      borders: {
+        subtle: { value: "1px solid {colors.border/50}" },
+      },
     },
     semanticTokens: {
       colors: {

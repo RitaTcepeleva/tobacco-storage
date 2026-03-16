@@ -6,9 +6,7 @@ export const buttonRecipe = defineRecipe({
     gap: 4,
     alignItems: "center",
     color: "{colors.primary}",
-    borderWidth: "1px",
-    borderStyle: "solid",
-    borderColor: "border/50",
+    border: "subtle",
     _hover: {
       cursor: "pointer",
     },

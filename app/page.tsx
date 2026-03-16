@@ -15,7 +15,11 @@ import { FaRegTrashAlt } from "react-icons/fa";
 import { CiSearch } from "react-icons/ci";
 import { FiBox } from "react-icons/fi";
 import { Menu } from "@/shared/components/ui/menu";
-import { StatisticCard, RecentlyAcquiredCard } from "@/shared/components/cards";
+import {
+  StatisticCard,
+  RecentlyAcquiredCard,
+  CellarCard,
+} from "@/shared/components/cards";
 
 export default async function Page() {
   const items = [
@@ -95,6 +99,16 @@ export default async function Page() {
             }}
             size={125}
             caption={["Dessert", "Strong"]}
+          />
+
+          <CellarCard
+            title="Vanilla"
+            descrption="Bonche"
+            image={{
+              src: "/image.png",
+              alt: "image",
+            }}
+            size={125}
           />
         </HStack>
       </VStack>

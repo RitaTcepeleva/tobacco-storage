@@ -4,7 +4,7 @@ export const linkRecipe = defineRecipe({
   variants: {
     variant: {
       plain: {
-        color: "primary",
+        color: "mutedForeground",
         fontWeight: "medium",
         width: "100%",
         paddingBlock: 6,

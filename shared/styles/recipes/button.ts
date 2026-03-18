@@ -38,6 +38,21 @@ export const buttonRecipe = defineRecipe({
           bgColor: "{colors.destructive}/80",
         },
       },
+      exit: {
+        border: "none",
+        justifyContent: "start",
+        color: "mutedForeground",
+        "& svg": {
+          transition: "transform 300ms",
+        },
+        _hover: {
+          bg: "destructive/20",
+          color: "destructive",
+          "& svg": {
+            transform: "translateX(-4px)",
+          },
+        },
+      },
     },
     size: {
       md: {
@@ -58,6 +73,15 @@ export const buttonRecipe = defineRecipe({
         borderRadius: "50%",
         padding: 5,
         justifyContent: "center",
+      },
+      exit: {
+        borderRadius: "md",
+        paddingBlock: 6,
+        paddingInline: 8,
+        fontSize: "16px",
+        fontWeight: "medium",
+        gap: 6,
+        width: "100%",
       },
     },
   },

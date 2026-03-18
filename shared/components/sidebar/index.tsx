@@ -1,8 +1,16 @@
 "use client";
 
-import { VStack, HStack, Heading, Avatar, Text } from "@chakra-ui/react";
+import {
+  VStack,
+  HStack,
+  Heading,
+  Avatar,
+  Text,
+  Button,
+} from "@chakra-ui/react";
 import Image from "next/image";
 import { LuBlocks, LuBrickWall } from "react-icons/lu";
+import { RxExit } from "react-icons/rx";
 import { NavLink } from "../ui";
 
 export const Sidebar = () => {
@@ -22,12 +30,24 @@ export const Sidebar = () => {
           <Text fontSize={"14px"} fontWeight={"medium"}>
             John Doe
           </Text>
-          <Text fontSize={"12px"}>Collector</Text>
+          <Text fontSize={"12px"} color={"mutedForeground"}>
+            Collector
+          </Text>
         </VStack>
       </HStack>
-      <VStack width={"100%"} padding={8}>
-        <NavLink href="/">{<LuBrickWall size={20} />}Dashboard</NavLink>
-        <NavLink href="/cellar">{<LuBlocks size={20} />}Cellar</NavLink>
+      <VStack
+        width={"100%"}
+        height={"100%"}
+        padding={8}
+        justifyContent={"space-between"}
+      >
+        <VStack width={"100%"}>
+          <NavLink href="/">{<LuBrickWall size={20} />}Dashboard</NavLink>
+          <NavLink href="/cellar">{<LuBlocks size={20} />}Cellar</NavLink>
+        </VStack>
+        <Button variant={"exit"} size={"exit"}>
+          {<RxExit />}Exit
+        </Button>
       </VStack>
     </VStack>
   );

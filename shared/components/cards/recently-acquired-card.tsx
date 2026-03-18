@@ -1,21 +1,22 @@
 import { Card, HStack, Badge, Box } from "@chakra-ui/react";
 import Image from "next/image";
+import type { Card as CardProps } from "@/shared/types";
 
-type RecentlyAcquiredCardProps = {
-  title: string;
-  descrption: string;
-  image: { src: string; alt: string };
-  caption: string[];
-  size: number;
-};
+// type RecentlyAcquiredCardProps = {
+//   title: string;
+//   descrption: string;
+//   image: { src: string; alt: string };
+//   tags: string[];
+//   size: number;
+// };
 
 export const RecentlyAcquiredCard = ({
   title,
-  descrption,
+  description,
   image,
-  caption,
+  tags,
   size,
-}: RecentlyAcquiredCardProps) => {
+}: CardProps) => {
   return (
     <Card.Root variant="recentlyAcquired">
       <Card.Body>
@@ -37,15 +38,17 @@ export const RecentlyAcquiredCard = ({
         >{`${size}G`}</Badge>
       </Card.Body>
       <Card.Footer>
-        <Card.Description>{descrption}</Card.Description>
+        <Card.Description>{description}</Card.Description>
         <Card.Title>{title}</Card.Title>
-        <HStack>
-          {caption.map((cap) => (
-            <Badge key={cap} variant={"solid"}>
-              {cap}
-            </Badge>
-          ))}
-        </HStack>
+        {tags && (
+          <HStack>
+            {tags.map((tag) => (
+              <Badge key={tag} variant={"solid"}>
+                {tag}
+              </Badge>
+            ))}
+          </HStack>
+        )}
       </Card.Footer>
     </Card.Root>
   );

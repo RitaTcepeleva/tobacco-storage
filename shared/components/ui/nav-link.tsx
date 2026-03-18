@@ -1,3 +1,5 @@
+"use client";
+
 import { Link as ChakraLink } from "@chakra-ui/react";
 import NextLink from "next/link";
 import { usePathname } from "next/navigation";

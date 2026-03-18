@@ -15,10 +15,15 @@ import { NavLink } from "../ui";
 
 export const Sidebar = () => {
   return (
-    <VStack width="16rem" height="100vh" borderRight={"subtle"}>
+    <VStack
+      maxWidth="16rem"
+      height="100vh"
+      borderRight={"subtle"}
+      display={{ base: "none", md: "flex" }}
+    >
       <VStack width={"100%"} padding={16} borderBottom={"subtle"} gap={8}>
         <Image src="/logo.png" alt="logo" width={64} height={64} />
-        <Heading size="2xl" letterSpacing="tight" mt={8}>
+        <Heading size="2xl" letterSpacing="tight" mt={8} textAlign={"center"}>
           Tobacco Cellar
         </Heading>
       </VStack>

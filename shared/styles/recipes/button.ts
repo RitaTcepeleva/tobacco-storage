@@ -69,6 +69,13 @@ export const buttonRecipe = defineRecipe({
         fontSize: "14px",
         fontWeight: "medium",
       },
+      xl: {
+        borderRadius: "md",
+        paddingBlock: { base: 2, md: 4 },
+        paddingInline: { base: 5, lg: 12 },
+        fontSize: { base: "12px", lg: "16px" },
+        fontWeight: "medium",
+      },
       icon: {
         borderRadius: "50%",
         padding: 5,

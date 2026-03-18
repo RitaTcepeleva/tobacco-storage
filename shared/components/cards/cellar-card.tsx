@@ -1,20 +1,9 @@
 import Image from "next/image";
 import { Badge, Card, Button, Box } from "@chakra-ui/react";
 import { FaRegTrashAlt } from "react-icons/fa";
+import type { Card as CardProps } from "@/shared/types";
 
-type CellarCardProps = {
-  title: string;
-  descrption: string;
-  image: { src: string; alt: string };
-  size: number;
-};
-
-export const CellarCard = ({
-  title,
-  descrption,
-  image,
-  size,
-}: CellarCardProps) => {
+export const CellarCard = ({ title, description, image, size }: CardProps) => {
   return (
     <Card.Root variant="cellar">
       <Card.Body>
@@ -47,7 +36,7 @@ export const CellarCard = ({
         </Button>
       </Card.Body>
       <Card.Footer paddingTop={12}>
-        <Card.Description>{descrption}</Card.Description>
+        <Card.Description>{description}</Card.Description>
         <Card.Title>{title}</Card.Title>
       </Card.Footer>
     </Card.Root>

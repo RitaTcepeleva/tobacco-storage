@@ -5,17 +5,19 @@ import { CiFilter } from "react-icons/ci";
 import { IoIosArrowDown } from "react-icons/io";
 import { MdDone } from "react-icons/md";
 import { useFilters } from "@/shared/context";
-import type { Filters } from "@/shared/types";
+import type { Filters, MenuItem } from "@/shared/types";
 
-type MenuItemProps = { value: string; content: string };
-
-type MenuProps = {
+type MenuProps<K extends keyof Filters> = {
   title: string;
-  filter: keyof Filters;
-  items: MenuItemProps[];
+  filter: K;
+  items: MenuItem<Filters[K]>[];
 };
 
-export const Menu = ({ title, filter, items }: MenuProps) => {
+export const Menu = <K extends keyof Filters>({
+  title,
+  filter,
+  items,
+}: MenuProps<K>) => {
   const { filters, setFilter } = useFilters();
   const selectedItem = items.find((item) => item.value === filters[filter]);
 
@@ -33,9 +35,9 @@ export const Menu = ({ title, filter, items }: MenuProps) => {
           <ChakraMenu.Content>
             {items.map((item) => (
               <ChakraMenu.Item
-                value={item.value}
+                value={String(item.value)}
                 key={item.value}
-                onSelect={() => setFilter(filter, item.value)}
+                onSelect={() => setFilter(filter, String(item.value))}
               >
                 {item.content}
                 {selectedItem?.value === item.value && <MdDone />}

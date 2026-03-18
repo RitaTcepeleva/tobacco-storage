@@ -3,6 +3,8 @@ import type { Metadata } from "next";
 import { Providers } from "@/providers";
 import { dmSansFont, funnelDisplayFont } from "@/shared/styles/fonts";
 import { FiltersProvider } from "@/shared/context";
+import { HStack } from "@chakra-ui/react";
+import { Sidebar } from "@/shared/components/sidebar";
 
 export const metadata: Metadata = {
   title: "Tobacco Storage",
@@ -22,7 +24,12 @@ export default function RootLayout({
     >
       <body>
         <Providers>
-          <FiltersProvider>{children}</FiltersProvider>
+          <FiltersProvider>
+            <HStack h="100vh" align={"stretch"}>
+              <Sidebar />
+              {children}
+            </HStack>
+          </FiltersProvider>
         </Providers>
       </body>
     </html>

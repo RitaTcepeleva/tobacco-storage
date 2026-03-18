@@ -64,6 +64,9 @@ export const cardSlotRecipe = defineSlotRecipe({
           color: "foreground",
           border: "subtle",
           overflow: "hidden",
+          w: "100%",
+          // minW: 0,
+          maxW: "300px",
           "& button": { display: "none" },
           _hover: {
             bg: "card/60",
@@ -83,6 +86,12 @@ export const cardSlotRecipe = defineSlotRecipe({
             transition: "transform 700ms",
           },
         },
+        title: {
+          w: "100%",
+          whiteSpace: "nowrap",
+          overflow: "hidden",
+          textOverflow: "ellipsis",
+        },
         description: {
           textTransform: "uppercase",
         },
@@ -98,7 +107,7 @@ export const cardSlotRecipe = defineSlotRecipe({
       md: {
         body: { padding: 12 },
         title: {
-          fontSize: "24px",
+          fontSize: "22px",
         },
         footer: {
           padding: 12,

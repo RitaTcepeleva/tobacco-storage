@@ -21,6 +21,9 @@ export const linkRecipe = defineRecipe({
             transform: "scale(1.2)",
           },
         },
+        _focus: {
+          outline: "none",
+        },
       },
     },
   },

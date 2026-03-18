@@ -3,14 +3,9 @@ import { defineRecipe } from "@chakra-ui/react";
 export const inputRecipe = defineRecipe({
   base: {
     borderRadius: "16px",
-    padding: "12px 4px",
+    padding: "8px 4px",
   },
   variants: {
-    size: {
-      md: {
-        "--input-height": "sizes.14",
-      },
-    },
     variant: {
       outline: {
         bg: "card/30",

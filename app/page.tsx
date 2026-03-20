@@ -1,114 +1,31 @@
-import {
-  Box,
-  HStack,
-  Heading,
-  Text,
-  VStack,
-  Avatar,
-  Button,
-  Input,
-  InputGroup,
-  Badge,
-} from "@chakra-ui/react";
-import { FaRegTrashAlt } from "react-icons/fa";
-import { CiSearch } from "react-icons/ci";
-import { FiBox } from "react-icons/fi";
-import { Menu } from "@/shared/components/ui/menu";
-import {
-  StatisticCard,
-  RecentlyAcquiredCard,
-  CellarCard,
-} from "@/shared/components/cards";
+import { Grid } from "@chakra-ui/react";
+import { StatisticCard } from "@/shared/components/cards";
+import { Header, RecentlyAcquiredCards } from "./_components";
+import { statisticCardItems } from "@/shared/constants";
 
 export default async function Page() {
-  const items = [
-    { value: "all", content: "All Strength" },
-    { value: "light", content: "Light" },
-    { value: "medium", content: "Medium" },
-    { value: "strong", content: "Strong" },
-  ];
   return (
-    <VStack gap="8" textAlign="center" padding={24} flex={1} overflowY={"auto"}>
-      <Heading size="2xl" letterSpacing="tight">
-        Welcome to Chakra UI v3 + Next.js (App)
-      </Heading>
-      <Text>ui-kit</Text>
+    <>
+      <Header />
 
-      <HStack>
-        <Button variant={"edit"}>Edit</Button>
-        <Button variant={"add"}>Add</Button>
-        <Button variant={"remove"}>Remove</Button>
-        <Button variant={"remove"} size={"icon"}>
-          <FaRegTrashAlt />
-        </Button>
-      </HStack>
-      <Avatar.Root variant={"solid"} size={"2xl"}>
-        <Avatar.Fallback name="John Doe" />
-      </Avatar.Root>
-      <InputGroup
-        startElement={
-          <Box ml={3} color={"primary"}>
-            <CiSearch strokeWidth={1.5} size={24} />
-          </Box>
-        }
+      <Grid
+        templateColumns={"repeat(auto-fit, minmax(200px, 1fr))"}
+        gap={5}
+        mb={20}
       >
-        <Input
-          variant={"outline"}
-          id="search-field"
-          placeholder="Search flavours, brands..."
-        />
-      </InputGroup>
+        {statisticCardItems.map((item) => (
+          <StatisticCard
+            key={`${item.title} ${item.description}`}
+            title={item.title}
+            description={item.description}
+            caption={item.caption}
+          >
+            {item.children}
+          </StatisticCard>
+        ))}
+      </Grid>
 
-      <Menu title="Strength" items={items} filter="strength" />
-
-      <HStack>
-        <Box width={100} height={100} bg={"tobacco.400"} />
-        <Box width={100} height={100} bg={"tobacco.500"} />
-        <Box width={100} height={100} bg={"tobacco.600"} />
-        <Box width={100} height={100} bg={"tobacco.700"} />
-        <Box width={100} height={100} bg={"tobacco.800"} />
-        <Box width={100} height={100} bg={"tobacco.900"} />
-        <Box width={100} height={100} bg={"black/20"} />
-      </HStack>
-
-      <HStack>
-        <Badge size="md">250G</Badge>
-        <Badge variant="outline" size="md">
-          125G
-        </Badge>
-        <Badge variant="solid">Fruit</Badge>
-      </HStack>
-
-      <HStack>
-        <StatisticCard
-          title="1,450"
-          description="Total Stock"
-          caption={["grams", "+125g this month"]}
-        >
-          <FiBox size={24} />
-        </StatisticCard>
-
-        <RecentlyAcquiredCard
-          title="Vanilla"
-          description="Bonche"
-          image={{
-            src: "/image.png",
-            alt: "image",
-          }}
-          size={125}
-          tags={["dessert", "strong"]}
-        />
-
-        <CellarCard
-          title="Vanilla"
-          description="Bonche"
-          image={{
-            src: "/image.png",
-            alt: "image",
-          }}
-          size={125}
-        />
-      </HStack>
-    </VStack>
+      <RecentlyAcquiredCards />
+    </>
   );
 }

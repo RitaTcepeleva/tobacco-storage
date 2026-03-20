@@ -1,11 +1,5 @@
 import { Card, Box, Text } from "@chakra-ui/react";
-import type { PropsWithChildren } from "react";
-
-type StatisticCardProps = {
-  title: string;
-  description: string;
-  caption: string[];
-} & PropsWithChildren;
+import type { StatisticCard as StatisticCardProps } from "@/shared/types";
 
 export const StatisticCard = ({
   children,

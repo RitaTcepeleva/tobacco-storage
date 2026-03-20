@@ -32,6 +32,7 @@ export const cardSlotRecipe = defineSlotRecipe({
           color: "foreground",
           border: "subtle",
           overflow: "hidden",
+          maxW: "250px",
           _hover: {
             boxShadow: "{shadows.cardHover}",
             "& img": {
@@ -119,7 +120,6 @@ export const cardSlotRecipe = defineSlotRecipe({
         root: {
           padding: 12,
           gap: 4,
-          maxWidth: "210px",
         },
         body: { padding: 0, gap: 7 },
         title: {

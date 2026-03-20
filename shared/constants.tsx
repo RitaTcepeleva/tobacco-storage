@@ -1,4 +1,7 @@
-import type { MenuItem, Card, Strength, Flavour } from "./types";
+import type { MenuItem, Card, Strength, Flavour, StatisticCard } from "./types";
+import { FiBox, FiDroplet } from "react-icons/fi";
+import { RiFireLine } from "react-icons/ri";
+import { GrAchievement } from "react-icons/gr";
 
 export const strengthItems: MenuItem<Strength>[] = [
   { value: "all", content: "All Strength" },
@@ -19,7 +22,7 @@ export const flavourItems: MenuItem<Flavour>[] = [
   { value: "herbal", content: "Herbal" },
 ];
 
-// test cellar cards content
+// test cards content
 
 export const cellarCardItems: Card[] = [
   {
@@ -77,5 +80,32 @@ export const cellarCardItems: Card[] = [
     image: { src: "/image.png", alt: "vanilla" },
     size: 50,
     tags: ["dessert", "strong"],
+  },
+];
+
+export const statisticCardItems: StatisticCard[] = [
+  {
+    title: "1,450",
+    description: "Total Stock",
+    children: <FiBox />,
+    caption: ["grams", "+125g this month"],
+  },
+  {
+    title: "Dessert",
+    description: "Top Profile",
+    children: <FiDroplet />,
+    caption: ["45% of stash", "Growing preference"],
+  },
+  {
+    title: "Medium",
+    description: "Avg. Strength",
+    children: <RiFireLine />,
+    caption: ["60% of stock", "Consistent"],
+  },
+  {
+    title: "Darkside",
+    description: "Top Brand",
+    children: <GrAchievement />,
+    caption: ["5 varieties", "Most stocked"],
   },
 ];

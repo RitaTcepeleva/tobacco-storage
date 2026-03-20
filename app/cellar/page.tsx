@@ -1,11 +1,11 @@
 import { CellarCard } from "@/shared/components/cards";
-import { Box, Grid } from "@chakra-ui/react";
+import { Grid } from "@chakra-ui/react";
 import { Header, Filters } from "./_components";
 import { cellarCardItems } from "@/shared/constants";
 
 const Cellar = () => {
   return (
-    <Box padding={{ base: 12, lg: 24 }} w={"100%"} overflowY={"auto"}>
+    <>
       <Header />
       <Filters />
       <Grid
@@ -23,7 +23,7 @@ const Cellar = () => {
           />
         ))}
       </Grid>
-    </Box>
+    </>
   );
 };
 

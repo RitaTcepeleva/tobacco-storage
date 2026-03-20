@@ -1,5 +1,6 @@
 import { Button, Text, Heading, VStack, Stack } from "@chakra-ui/react";
 import { GoPlus } from "react-icons/go";
+import { BurgerButton } from "@/shared/components/ui";
 
 export const Header = () => {
   return (
@@ -19,9 +20,12 @@ export const Header = () => {
           Manage your entire inventory and filter by profile.
         </Text>
       </VStack>
-      <Button variant={"add"} size={"xl"} alignSelf={{ sm: "end" }}>
-        {<GoPlus />}Add New Jar
-      </Button>
+      <VStack>
+        <BurgerButton width={"100%"} />
+        <Button variant={"add"} size={"xl"} width={"100%"}>
+          {<GoPlus />}Add New Jar
+        </Button>
+      </VStack>
     </Stack>
   );
 };

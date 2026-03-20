@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-// import "./globals.css";
 import { Providers } from "@/providers";
 import { dmSansFont, funnelDisplayFont } from "@/shared/styles/fonts";
 import { FiltersProvider } from "@/shared/context";

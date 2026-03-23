@@ -1,6 +1,7 @@
 import { Button, Text, Heading, VStack, Stack } from "@chakra-ui/react";
 import { GoPlus } from "react-icons/go";
-import { BurgerButton } from "@/shared/components/ui";
+// import { BurgerButton } from "@/shared/components/ui";
+import { MobileNavigationDialog } from "@/shared/components/dialog";
 
 export const Header = () => {
   return (
@@ -21,7 +22,8 @@ export const Header = () => {
         </Text>
       </VStack>
       <VStack>
-        <BurgerButton width={"100%"} />
+        {/* <BurgerButton width={"100%"} /> */}
+        <MobileNavigationDialog />
         <Button variant={"add"} size={"xl"} width={"100%"}>
           {<GoPlus />}Add New Jar
         </Button>

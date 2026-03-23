@@ -1,5 +1,5 @@
 import { Heading, Text, Box, HStack } from "@chakra-ui/react";
-import { BurgerButton } from "@/shared/components/ui";
+import { MobileNavigationDialog } from "@/shared/components/dialog";
 
 export const Header = () => {
   return (
@@ -16,7 +16,9 @@ export const Header = () => {
           Your curated tobacco collection at a glance.
         </Text>
       </Box>
-      <BurgerButton />
+      <Box>
+        <MobileNavigationDialog />
+      </Box>
     </HStack>
   );
 };

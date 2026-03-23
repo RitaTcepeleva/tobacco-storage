@@ -5,6 +5,7 @@ import { menuSlotRecipe } from "./menu";
 import { badgeRecipe } from "./badge";
 import { cardSlotRecipe } from "./card";
 import { linkRecipe } from "./link";
+import { dialogSlotRecipe } from "./dialog";
 
 export const recipes = {
   button: buttonRecipe,
@@ -16,4 +17,5 @@ export const slotRecipes = {
   avatar: avatarSlotRecipe,
   menu: menuSlotRecipe,
   card: cardSlotRecipe,
+  dialog: dialogSlotRecipe,
 };

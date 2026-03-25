@@ -1,7 +1,7 @@
 import { Dialog } from "./default-dialog";
 import { BurgerButton, NavLink } from "../ui";
 import {
-  Dialog as CharkaDialog,
+  Dialog as ChakraDialog,
   Button,
   VStack,
   HStack,
@@ -15,10 +15,10 @@ export const MobileNavigationDialog = () => {
   return (
     <Dialog openTrigger={<BurgerButton width={"100%"} />}>
       <>
-        <CharkaDialog.Header>
-          <CharkaDialog.Title>Tobacco Cellar</CharkaDialog.Title>
-        </CharkaDialog.Header>
-        <CharkaDialog.Body>
+        <ChakraDialog.Header>
+          <ChakraDialog.Title>Tobacco Cellar</ChakraDialog.Title>
+        </ChakraDialog.Header>
+        <ChakraDialog.Body>
           <HStack padding={5} width={"100%"} gap={8} borderBlock={"subtle"}>
             <Avatar.Root variant={"solid"} size={"xl"}>
               <Avatar.Fallback name="John Doe" />
@@ -39,7 +39,7 @@ export const MobileNavigationDialog = () => {
               {<RxExit size={20} />}Exit
             </Button>
           </VStack>
-        </CharkaDialog.Body>
+        </ChakraDialog.Body>
       </>
     </Dialog>
   );

@@ -4,22 +4,30 @@ import { RiFireLine } from "react-icons/ri";
 import { GrAchievement } from "react-icons/gr";
 
 export const strengthItems: MenuItem<Strength>[] = [
-  { value: "all", content: "All Strength" },
   { value: "light", content: "Light" },
   { value: "medium", content: "Medium" },
   { value: "strong", content: "Strong" },
 ];
 
+export const strengthFilters: MenuItem<Strength>[] = [
+  { value: "all", content: "All Strength" },
+  ...strengthItems,
+];
+
 export const flavourItems: MenuItem<Flavour>[] = [
-  { value: "all", content: "All Profiles" },
   { value: "dessert", content: "Dessert" },
   { value: "fruit", content: "Fruit" },
   { value: "berry", content: "Berry" },
   { value: "alcohol", content: "Alcohol" },
-  { value: "no aroma", content: "No Aroma" },
+  { value: "no", content: "No Aroma" },
   { value: "mint", content: "Mint" },
   { value: "gastronomy", content: "Gastronomy" },
   { value: "herbal", content: "Herbal" },
+];
+
+export const flavourFilters: MenuItem<Flavour>[] = [
+  { value: "all", content: "All Profiles" },
+  ...flavourItems,
 ];
 
 // test cards content

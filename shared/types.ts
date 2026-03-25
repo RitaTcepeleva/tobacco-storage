@@ -14,7 +14,7 @@ export type Flavour =
   | "fruit"
   | "berry"
   | "alcohol"
-  | "no aroma"
+  | "no"
   | "mint"
   | "gastronomy"
   | "herbal";

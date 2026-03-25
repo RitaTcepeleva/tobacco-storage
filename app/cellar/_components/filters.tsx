@@ -1,7 +1,7 @@
 import { Menu } from "@/shared/components/ui";
 import { Input, InputGroup, HStack, Stack, Box } from "@chakra-ui/react";
 import { CiSearch } from "react-icons/ci";
-import { strengthItems, flavourItems } from "@/shared/constants";
+import { strengthFilters, flavourFilters } from "@/shared/constants";
 
 export const Filters = () => {
   return (
@@ -24,8 +24,8 @@ export const Filters = () => {
         />
       </InputGroup>
       <HStack>
-        <Menu title="Strength" items={strengthItems} filter="strength" />
-        <Menu title="Flavour" items={flavourItems} filter="flavour" />
+        <Menu title="Strength" items={strengthFilters} filter="strength" />
+        <Menu title="Flavour" items={flavourFilters} filter="flavour" />
       </HStack>
     </Stack>
   );

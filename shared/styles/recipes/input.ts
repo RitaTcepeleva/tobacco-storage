@@ -19,6 +19,7 @@ export const inputRecipe = defineRecipe({
         _placeholder: {
           color: "primary",
         },
+        _invalid: { borderColor: "destructive" },
       },
     },
   },

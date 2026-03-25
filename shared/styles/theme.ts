@@ -163,6 +163,7 @@ const config = defineConfig({
 
         border: {
           value: "{colors.tobacco.500}",
+          // error: { value: "{colors.red}" },
         },
 
         input: {

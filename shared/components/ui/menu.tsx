@@ -51,13 +51,21 @@ export const Menu = <K extends keyof Filters>({
   );
 };
 
+type AdditionMenuProps<K extends keyof Filters> = {
+  title: string;
+  items: MenuItem<Filters[K]>[];
+  selectedItem?: Filters[K];
+  onChange?: (value: Filters[K]) => void;
+  invalid: boolean;
+};
+
 export const AdditionMenu = <K extends keyof Filters>({
   title,
   items,
-}: MenuProps<K>) => {
-  const [filter, setFilter] = useState<Filters[K]>();
-  const selectedItem = items.find((item) => item.value === filter);
-
+  selectedItem,
+  onChange,
+  invalid,
+}: AdditionMenuProps<K>) => {
   return (
     <ChakraMenu.Root>
       <ChakraMenu.Trigger asChild>
@@ -67,8 +75,9 @@ export const AdditionMenu = <K extends keyof Filters>({
           w={"100%"}
           justifyContent={"space-between"}
           bg={"card/30"}
+          borderColor={invalid ? "destructive" : "border/50"}
         >
-          {selectedItem ? selectedItem.content : title}
+          {items.find((i) => i.value === selectedItem)?.content || title}
           <IoIosArrowDown opacity={0.5} />
         </Button>
       </ChakraMenu.Trigger>
@@ -80,13 +89,13 @@ export const AdditionMenu = <K extends keyof Filters>({
                 value={String(item.value)}
                 key={item.value}
                 onSelect={() => {
-                  item.value === filter
-                    ? setFilter(undefined)
-                    : setFilter(String(item.value));
+                  item.value === selectedItem
+                    ? onChange?.(undefined)
+                    : onChange?.(item.value);
                 }}
               >
                 {item.content}
-                {selectedItem?.value === item.value && <MdDone />}
+                {selectedItem === item.value && <MdDone />}
               </ChakraMenu.Item>
             ))}
           </ChakraMenu.Content>

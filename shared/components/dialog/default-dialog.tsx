@@ -1,10 +1,8 @@
 import { Button, Dialog as ChakraDialog, Portal } from "@chakra-ui/react";
-// import type { DialogRootProps } from "@chakra-ui/react";
 import { IoIosClose } from "react-icons/io";
 import type { PropsWithChildren } from "react";
 
-type DialogProps = { openTrigger: React.ReactNode } & PropsWithChildren /* &
-  DialogRootProps */;
+type DialogProps = { openTrigger: React.ReactNode } & PropsWithChildren;
 
 export const Dialog = ({ openTrigger, children }: DialogProps) => {
   return (
